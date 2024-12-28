@@ -1,63 +1,81 @@
 # Module 11 - Mini-Project - React E-commerce Web Application
+Author: Elizabeth Yates
+
+**Author's Note**: Please find the code for the backend at the following location: https://github.com/ecyates/module-6-mini-project-e-commerce-api.
 
 ## Project Requirements
-To successfully build our e-commerce application and achieve the learning objectives, we need to establish clear project requirements. These requirements outline the key features and functionalities that our application must encompass. Below, you'll find a comprehensive list of project requirements based on our learning objectives:
+To successfully build an e-commerce management app with the following features.
 
-1. **Customer and CustomerAccount Management**: Create React components and functionality for managing Customers and their associated CustomerAccounts:
-- **Create Customer Form**: Develop a form component to capture and submit essential customer information, including name, email, and phone number. Make sure this matches what you did back in Module 6!!
-- **Read Customer Details**: Create a component to display customer details retrieved from the backend based on their unique identifier (ID).
-- **Update Customer Form**: Build a form component that allows users to update customer details, including the name, email, and phone number.
-- **Delete Customer Information**: Build a function in your Customer Detail Component that when triggered will delete a customer from the backend based on their unique identifier (ID).
+### 1. Customer and CustomerAccount Management
 
-2. **Product Catalog**: Create React components and functionality for managing Products:
-- **List Products**: Create a component to display a list of all available products in the e-commerce platform, providing essential product information.
-- **Create Product Form**: Develop a form component for adding a new product to the e-commerce database. Capture essential product details, such as the product name and price.
-- **Read Product Details**: Create a component to display product details retrieved from the backend based on the product's unique identifier (ID).
-- **Update Product Form**: Build a form component that allows users to update product details, including the product name and price.
-- **Delete Product Information**: Build a function in your Product Detail Component that when triggered will delete a product from the backend based on their unique identifier (ID).
-- **Product Confirmation Modal**: Design a confirmation modal or component for securely creating, updating or deleting a product from the system based on its unique ID
-- **View and Manage Product Stock Levels (Bonus)**: Develop a component for viewing and managing the stock levels of each product in the catalog. Administrators should be able to see the current stock level and make adjustments as needed.
-- **Restock Products When Low (Bonus)**: Implement a component that monitors product stock levels and triggers restocking when they fall below a specified threshold. Ensure that stock replenishment is efficient and timely.
+#### List of Customers (CustomerList.sx)
+A component that displays all the customers' names with the following features: 
+- View Customer Details button (takes you to CustomerDetails.jsx)
+- Edit button (takes you to CustomerForm.jsx)
+- Delete button (deletes the customer from the database)
 
-3. **Order Processing**: Develop React components and functionality for efficient handling of customer orders:
-- **Place Order Form**: Create a form component for customers to place new orders, specifying the products they wish to purchase and providing essential order details. Each order should capture the order date and the associated customer.
-- **Manage Order History (Bonus)**: Create a component that allows customers to access their order history, listing all previous orders placed. Each order entry should provide comprehensive information, including the order date and associated products.
-- **Cancel Order (Bonus)**: Implement an order cancellation feature, allowing customers to cancel an order if it hasn't been shipped or completed. Ensure that canceled orders are appropriately reflected in the system.
-- **Calculate Order Total Price (Bonus)**: Include a component that calculates the total price of items in a specific order, considering the prices of the products included in the order. This calculation should be specific to each customer and each order, providing accurate pricing information.
+This component includes a modal when a customer is successfully deleted. 
 
-4. **Component Creation and Organization**:
-- Create either functional or class components to build the user interface of the e-commerce application.
-- Organize components into a logical folder structure for better code organization and maintainability.
-- Use React hooks such as useState, useEffect, and useContext as appropriate to manage component state and side effects.
+#### Create Customer Form (CustomerForm.sx)
+A form component to capture and submit essential customer information, including username, password, name, email, and phone number.
+This component includes a modal when a customer is successfully added. 
 
-5. **Routing and Navigation**:
-- Implement routing using React Router to create routes for different sections and pages of the application.
-- Define route paths and components to be rendered when specific URLs are accessed.
-- Use navigation links or buttons to allow users to navigate between different parts of the application.
+#### Update Customer Form (CustomerForm.sx)
+A form component that allows users to update customer details, including the name, email, and phone number.
+This component includes a modal when a customer is successfully updated. 
 
-6. **Forms and Form Handling**:
-- Develop forms using React components to capture user inputs for creating, updating, or interacting with customer data, product data, and orders.
-- Implement form validation to ensure that user inputs meet specified criteria, such as required fields, proper formatting, and validation messages.
-- Utilize React state and hooks to manage form data and user input changes.
-- Implement form submission handlers to send data to the backend API for processing.
+#### View Customer Details (CustomerDetails.sx)
+A component to show the username, name, email, phone number of the customer, as well as a list of each order made by that customer. 
 
-7. **Event Handling**:
-- Set up event handlers to respond to user interactions and events within the application.
-- Implement event listeners for actions like button clicks, form submissions, and user interactions with UI elements.
-- Use event handling to trigger actions like submitting forms, deleting records, and updating data.
+### 2. Product Catalog
 
-8. **Integration with React-Bootstrap**:
-- Incorporate React-Bootstrap components and utilities to enhance the user interface of the application.
-- Use React-Bootstrap components such as buttons, forms, modals, alerts, and navigation elements to improve the visual design and functionality.
-- Apply Bootstrap styles and CSS classes to achieve a visually appealing and responsive layout
+#### List of Products (ProductList.jsx)
+A component to display a list of all available products in the e-commerce platform, providing essential product information like id, name, and price. 
 
-9. **Error Handling**:
-- Implement error handling mechanisms to gracefully handle errors that may occur during data retrieval, form submission, or API interactions.
-- Display informative error messages to users when errors occur, helping them understand the nature of the issue and how to resolve it.
-- Use try-catch blocks or error-handling functions to capture and manage exceptions and errors.
+It allows the following features: 
+- Edit button (takes you to ProductForm.jsx)
+- Delete button (deletes the product from the database)
 
-10. **GitHub Repository**:
-- Create a GitHub repository for the project and commit code regularly.
-- Maintain a clean and interactive README.md file in the GitHub repository, providing clear instructions on how to run the application and explanations of its features.
-- Include a link to the GitHub repository in the project documentation.
-- Provide a link to your Module 6 Mini-Project (The backend for this project) inside of your README.md file so the instructor can easily download your code and grade it.
+This component includes a modal when a product is successfully deleted. 
+
+#### Create Product Form (ProductForm.jsx)
+A form component to capture and submit essential product information, including name and price.
+This component includes a modal when a product is successfully added. 
+
+#### Update Product Form (ProductForm.jsx)
+A form component that allows users to update product details, including the product name and price.
+This component includes a modal when a product is successfully updated. 
+
+### 3. Order Processing
+
+#### Place Order Form (OrderForm.jsx)
+A form component for customers to place new orders, specifying the products they wish to purchase and providing essential order details. 
+Each order captures the order date and the associated customer.
+
+#### Order History (CustomerDetails.jsx)
+The order details are displayed in the customer detail page, including the date, associate products, and **order total**. 
+It also allows the ability to **cancel the order**. 
+
+### 4. Other Components
+
+#### Home.jsx
+Welcoming the users, the home page gives a brief description of the functionality of the e-commerce management app and provides paths to browse the customers, products and place an order. 
+
+#### NavigationBar.jsx
+The navigation bar provides links to the Home Page, Customer Form, Customer List, Product Form, Product List and Order Form. 
+ 
+ #### NotFound.jsx
+ The not found page appears whenever the user navigates to an unknown page and provides a link back home. 
+
+### 5. Other Features
+- Integration of React-Bootstrap
+- Implementation of React Router in App.jsx
+
+
+
+
+*This code can be found in this repository:*
+*https://github.com/ecyates/module-10-mini-project-api-integration.git*
+
+*The backend code can be found in this repository:*
+*https://github.com/ecyates/module-6-mini-project-e-commerce-api*
